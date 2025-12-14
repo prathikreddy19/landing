@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+section {
+  padding: 100px 10%;
+}
+
+button {
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  section {
+    padding: 80px 6%;
+  }
+
+  h1 {
+    font-size: 2.2rem !important;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  nav div span {
+    font-size: 0.9rem;
+  }
+
+  button, a {
+    min-height: 44px; /* mobile touch standard */
+  }
+}
