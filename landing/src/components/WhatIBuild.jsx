@@ -1,24 +1,40 @@
 import { motion } from "framer-motion";
 
 const items = [
-  { title: "Full-Stack Systems", desc: "MERN, FastAPI, scalable architectures" },
-  { title: "AI & ML Products", desc: "Transformers, NLP, real-time inference" },
-  { title: "Automation & IoT", desc: "ESP32, sensors, dashboards" },
+  {
+    title: "Full-Stack Systems",
+    desc: "Scalable MERN & FastAPI applications with clean architecture and secure authentication.",
+  },
+  {
+    title: "AI & ML Products",
+    desc: "Transformer-based models, NLP pipelines, and real-time inference systems.",
+  },
+  {
+    title: "Automation & IoT",
+    desc: "ESP32-based automation with sensor integration and web dashboards.",
+  },
 ];
 
 export default function WhatIBuild() {
   return (
     <section id="work">
-      <h2>What I Build</h2>
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        What I Build
+      </motion.h2>
+
       <div style={styles.grid}>
         {items.map((item, i) => (
           <motion.div
             key={i}
-            whileHover={{ y: -10 }}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.2 }}
+            transition={{ delay: i * 0.15 }}
+            whileHover={{ y: -12, boxShadow: "0 20px 40px rgba(56,189,248,0.15)" }}
             style={styles.card}
           >
             <h3>{item.title}</h3>
@@ -33,14 +49,16 @@ export default function WhatIBuild() {
 const styles = {
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
-    gap: "24px",
-    marginTop: "40px",
+    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+    gap: "28px",
+    marginTop: "48px",
   },
   card: {
-    background: "#020617",
-    border: "1px solid #1e293b",
-    padding: "30px",
-    borderRadius: "14px",
+    background: "rgba(255,255,255,0.03)",
+    backdropFilter: "blur(14px)",
+    border: "1px solid rgba(255,255,255,0.08)",
+    borderRadius: "20px",
+    padding: "36px",
+    transition: "0.3s ease",
   },
 };
